@@ -37,7 +37,11 @@ public class PapeleriaMain {
 	public static void escribeCsv() {
 		File f = new File("./resultado.csv");
 		try(FileWriter fw= new FileWriter(f);){
-			
+			for(Papeleria papeleria:producto) {
+				
+			}
+		}catch(Exception e) {
+			System.out.println("Ha ocurrido un error");
 		}
 	}
 	
