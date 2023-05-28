@@ -36,16 +36,22 @@ public class PapeleriaMain {
 	}
 	public static void escribeCsv() {
 		File f = new File("./resultado.csv");
-		try(FileWriter fw= new Filwriter(f);)
+		try(FileWriter fw= new FileWriter(f);){
+			for(Papeleria papeleria:producto) {
+				fw.write(papeleria.toCsv()+"\n");
+			}
+		}catch(Exception e) {
+			System.out.println("Ha ocurrido un error");
+		}
 	}
 	
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		escribeVector(sc);
+		escribeCsv();
 		sc.close();
 	}
-	
 	
 	
 }
