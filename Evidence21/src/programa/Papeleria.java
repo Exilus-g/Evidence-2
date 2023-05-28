@@ -9,10 +9,10 @@ public class Papeleria {
 	private String nombre;
 	private String marca;
 	private String precio;
-	private int existencia;
+	private String existencia;
 	private String categoria;
 	
-	public Papeleria(String nombre, String marca,String precio, int existencia, String categoria) {
+	public Papeleria(String nombre, String marca,String precio,String existencia, String categoria) {
 		this.setNombre(nombre);
 		this.setMarca(marca);
 		this.setPrecio(precio);
@@ -34,7 +34,7 @@ public class Papeleria {
 		return precio;
 	}
 	
-	public int getExistencia() {
+	public String getExistencia() {
 		return existencia;
 	}
 	
@@ -62,7 +62,7 @@ public class Papeleria {
 		this.precio = precio;
 	}
 	
-	public void setExistencia(int existencia) {
+	public void setExistencia(String existencia) {
 		this.existencia = existencia;
 	}
 	
