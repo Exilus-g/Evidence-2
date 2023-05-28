@@ -46,30 +46,37 @@ public class PapeleriaMain {
 		}
 	}
 	
+	public static int menu(Scanner sc) {
+		
+		System.out.println("=== Papelería ===");
+        System.out.println("1. Mostrar inventario ordenado por categoria.");
+        System.out.println("1. Mostrar inventario ordenado por Nombre.");
+        System.out.println("2. Agregar nuevo elemento.");
+        System.out.println("3. Salir");
+        System.out.print("Ingrese su opción: ");
+        int opcion=sc.nextInt();
+        return opcion;
+	}
+	
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		escribeVector(sc);
-		escribeCsv();
 		sc.close();
 		int opcion;
+		
         do {
-            System.out.println("=== Papelería ===");
-            System.out.println("1. Mostrar inventario ordenad.");
-            System.out.println("2. Agregar nuevo elemento.");
-            System.out.println("3. Salir");
-            System.out.print("Ingrese su opción: ");
-            opcion = sc.nextInt();
-
+        	opcion=menu(sc);
             switch (opcion) {
                 case 1:
-                    papeleria.mostrarInventario();
+                	System.out.println("Aquí muestra inventario por categoria");
                     break;
                 case 2:
-                    papeleria.agregarElemento();
+                	System.out.println("Aquí muestra inventario por nombre");
                     break;
                 case 3:
-                    System.out.println("¡Hasta luego!");
+                	System.out.println("-----Ingresar Nuevos Elementos-----");
+                	escribeVector(sc);
+            		escribeCsv();
                     break;
                 default:
                     System.out.println("Opción inválida. Intente nuevamente.");
