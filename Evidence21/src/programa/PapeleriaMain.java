@@ -7,7 +7,7 @@ import java.io.*;
 
 public class PapeleriaMain {
 	public static Vector<Papeleria>producto= new Vector<>();
-	public static void escribeArchivo(Scanner sc){
+	public static void escribeVector(Scanner sc){
 		String nombre;
 		String marca;
 		String precio;
@@ -32,8 +32,18 @@ public class PapeleriaMain {
 			}
 			
 		}while(!nombre.equalsIgnoreCase("Fin"));
+		return;
+	}
+	public static void escribeCsv() {
+		
 	}
 	
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		escribeVector(sc);
+		sc.close();
+	}
 	
 	
 	
