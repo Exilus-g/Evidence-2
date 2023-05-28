@@ -3,7 +3,7 @@
  * @author GabrielHL
  * @author AlejandroTC
  */
-package progama;
+package programa;
 
 public class Papeleria {
 	private String nombre;
