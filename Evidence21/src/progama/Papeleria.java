@@ -70,7 +70,4 @@ public class Papeleria {
 		this.categoria = categoria;
 	}
 
-	
-	
-	
 }
