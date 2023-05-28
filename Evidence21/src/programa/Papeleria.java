@@ -69,5 +69,9 @@ public class Papeleria {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	
+	public String toCsv() {
+		return this.nombre+","+this.marca+","+this.precio+","+this.existencia+","+this.categoria;
+	}
 
 }
