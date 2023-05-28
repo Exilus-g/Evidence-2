@@ -35,7 +35,8 @@ public class PapeleriaMain {
 		return;
 	}
 	public static void escribeCsv() {
-		
+		File f = new File("./resultado.csv");
+		try(FileWriter fw= new Filwriter(f);)
 	}
 	
 	
