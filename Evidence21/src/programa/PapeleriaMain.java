@@ -5,6 +5,7 @@ import java.util.Vector;
 import java.util.Collections;
 import java.io.*;
 
+
 public class PapeleriaMain {
 	public static Vector<Papeleria>producto= new Vector<>();
 	
@@ -45,6 +46,9 @@ public class PapeleriaMain {
 			System.out.println("Ha ocurrido un error");
 		}
 	}
+	public static void ingresaToCSV() {
+		
+	}
 	
 	public static int menu(Scanner sc) {
 		
@@ -61,29 +65,29 @@ public class PapeleriaMain {
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		sc.close();
+		
 		int opcion;
 		
         do {
         	opcion=menu(sc);
             switch (opcion) {
                 case 1:
-                	System.out.println("Aquí muestra inventario por categoria");
+                	System.out.println("-----Crear un Nuevo Csv-----");
+                	escribeVector(sc);
+            		escribeCsv();
                     break;
                 case 2:
                 	System.out.println("Aquí muestra inventario por nombre");
                     break;
                 case 3:
-                	System.out.println("-----Ingresar Nuevos Elementos-----");
-                	escribeVector(sc);
-            		escribeCsv();
+                	System.out.println("Aquí muestra inventario por categoria");
                     break;
                 default:
                     System.out.println("Opción inválida. Intente nuevamente.");
                     break;
             }
         } while (opcion != 3);
-		
+        sc.close();
 		
 	}
 	
