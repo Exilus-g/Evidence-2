@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.io.*;
 
 public class PapeleriaMain {
-	public static Vector<Papeleria>lee= new Vector<>();
+	public static Vector<Papeleria>producto= new Vector<>();
 	public static void escribeArchivo(Scanner sc){
 		String nombre;
 		String marca;
@@ -28,11 +28,13 @@ public class PapeleriaMain {
 				System.out.println("categoria: ");
 				categoria=sc.nextLine();
 				p= new Papeleria(nombre,marca,precio,existencia,categoria);
-				
+				producto.add(p);
 			}
 			
 		}while(!nombre.equalsIgnoreCase("Fin"));
 	}
+	
+	
 	
 	
 }
