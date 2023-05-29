@@ -133,25 +133,28 @@ public class PapeleriaMain {
 		try (FileWriter fw = new FileWriter("./resultado.csv", true)) {
             for (Papeleria papeleria : producto) {
                 fw.write(papeleria.toCsv() + "\n");
+                System.out.println("Producto(s) agregado(s) correctamente");
             }
         } catch (IOException e) {
             System.out.println("Ha ocurrido un error al escribir en el archivo CSV");
         }
     }
+	
+	
+	public static void guardarCsv() {
 		
+	}
+	
 	public static int menu(Scanner sc) {
 		
 		System.out.println("=== Papelería ===");
-        System.out.println("1. Crear un nuevo CSV nota: Esto borara el que esta en la ruta especificada.");
-        System.out.println("2. Mostrar inventario ordenado por Nombre.");
-        System.out.println("3. Agregar nuevo elemento al Csv Existente.");
-        System.out.println("4. Salir");
-
+        System.out.println("1. Menu de ordenamientos.");
+        System.out.println("2. Agregar nuevo elemento al Csv Existente.");
+        System.out.println("3. Salir");
         System.out.print("Ingrese su opción: ");
         int opcion=sc.nextInt();
         return opcion;
 	}
-	
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
@@ -162,25 +165,42 @@ public class PapeleriaMain {
         	opcion=menu(sc);
             switch (opcion) {
                 case 1:
-                	System.out.println("-----Crear un Nuevo Csv-----");
-                	escribeVector(sc);
-            		escribeCsv();
+                	do {
+                    	opcion=menu(sc);
+                        switch (opcion) {
+                            case 1:
+                            	System.out.println("Inventario ordenado por nombre.");
+                                break;
+                            case 2:
+                            	System.out.println("Inventario ordenado por precio.");
+                                break;
+                            case 3:
+                            	System.out.println("Inventario ordenado por categoría.");
+                                break;
+                            case 4:
+                            	System.out.println("Saliendo...");
+                                break;
+                            default:
+                                System.out.println("Opción inválida. Intente nuevamente.");
+                                break;
+                        }
+                    } while (opcion != 4);
                     break;
+                    
                 case 2:
-                	System.out.println("Aquí muestra inventario por nombre");
-                    break;
-                case 3:
-                	System.out.println("Prueba");
+                	System.out.println("-----Agregar Nuevo Producto");
                 	escribeVector(sc);
                 	ingresaToCSV();
+                    break;
+                case 3:
+                	System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opción inválida. Intente nuevamente.");
                     break;
             }
-        } while (opcion != 4);
+        } while (opcion != 3);
         sc.close();
-		
 	}
 	
 }
