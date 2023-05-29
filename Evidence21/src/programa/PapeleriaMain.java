@@ -62,10 +62,10 @@ public class PapeleriaMain {
 	public static int menu(Scanner sc) {
 		
 		System.out.println("=== Papelería ===");
-        System.out.println("1. Mostrar inventario ordenado por categoria.");
-        System.out.println("1. Mostrar inventario ordenado por Nombre.");
-        System.out.println("2. Agregar nuevo elemento.");
-        System.out.println("3. Salir");
+        System.out.println("1. Crear un nuevo CSV nota: Esto borara el que esta en la ruta especificada.");
+        System.out.println("2. Mostrar inventario ordenado por Nombre.");
+        System.out.println("3. Agregar nuevo elemento al Csv Existente.");
+        System.out.println("4. Salir");
         System.out.print("Ingrese su opción: ");
         int opcion=sc.nextInt();
         return opcion;
@@ -97,7 +97,7 @@ public class PapeleriaMain {
                     System.out.println("Opción inválida. Intente nuevamente.");
                     break;
             }
-        } while (opcion != 3);
+        } while (opcion != 4);
         sc.close();
 		
 	}
