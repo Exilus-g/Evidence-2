@@ -14,6 +14,7 @@ public class PapeleriaMain {
 		String marca;
 		String precio;
 		int existencia;
+		int id;
 		String categoria;
 		Papeleria p;
 		do {
@@ -29,7 +30,9 @@ public class PapeleriaMain {
 				existencia=Integer.parseInt(sc.nextLine());
 				System.out.println("categoria: ");
 				categoria=sc.nextLine();
-				p= new Papeleria(nombre,marca,precio,existencia,categoria);
+				System.out.println("Id: ");
+				id=Integer.parseInt(sc.nextLine());
+				p= new Papeleria(id,nombre,marca,precio,existencia,categoria);
 				producto.add(p);
 			}
 			
@@ -71,7 +74,7 @@ public class PapeleriaMain {
                     if (!tienePrecio) {
                     		System.out.println("El producto con id " + id + "no tiene precio.");
                         } else {
-                        	Papeleria pa = new Papeleria(nombre, marca, precio, existencia, categoria);
+                        	Papeleria pa = new Papeleria(id,nombre, marca, precio, existencia, categoria);
                         	producto.add(pa);
                         }
                 }
@@ -136,12 +139,6 @@ public class PapeleriaMain {
         }
     }
 		
-	
-	
-	
-	
-	
-	
 	public static int menu(Scanner sc) {
 		
 		System.out.println("=== Papelería ===");

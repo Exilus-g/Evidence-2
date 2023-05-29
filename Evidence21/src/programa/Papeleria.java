@@ -6,13 +6,15 @@
 package programa;
 
 public class Papeleria {
+	private int id;
 	private String nombre;
 	private String marca;
 	private String precio;
 	private int existencia;
 	private String categoria;
 	
-	public Papeleria(String nombre, String marca,String precio,int existencia, String categoria) {
+	public Papeleria(int id,String nombre, String marca,String precio,int existencia, String categoria) {
+		this.setId(id);
 		this.setNombre(nombre);
 		this.setMarca(marca);
 		this.setPrecio(precio);
@@ -22,6 +24,9 @@ public class Papeleria {
 	/**
      *  Get methods to obtain attribute values
      * */
+	public int getIdi() {
+		return id;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -50,6 +55,9 @@ public class Papeleria {
 	 * @param existencia
 	 * @param categoria
 	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
