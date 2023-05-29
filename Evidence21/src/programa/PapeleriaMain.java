@@ -10,6 +10,8 @@ public class PapeleriaMain {
 	public static Vector<Papeleria>producto= new Vector<>();
 	
 	public static void escribeVector(Scanner sc){
+		producto.clear();
+		sc.nextLine();
 		String nombre;
 		String marca;
 		String precio;
@@ -47,8 +49,15 @@ public class PapeleriaMain {
 		}
 	}
 	public static void ingresaToCSV() {
+		try (FileWriter fw = new FileWriter("./resultado.csv", true)) {
+            for (Papeleria papeleria : producto) {
+                fw.write(papeleria.toCsv() + "\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Ha ocurrido un error al escribir en el archivo CSV");
+        }
+    }
 		
-	}
 	
 	public static int menu(Scanner sc) {
 		
@@ -80,7 +89,9 @@ public class PapeleriaMain {
                 	System.out.println("Aquí muestra inventario por nombre");
                     break;
                 case 3:
-                	System.out.println("Aquí muestra inventario por categoria");
+                	System.out.println("Prueba");
+                	escribeVector(sc);
+                	ingresaToCSV();
                     break;
                 default:
                     System.out.println("Opción inválida. Intente nuevamente.");
