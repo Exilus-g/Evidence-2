@@ -79,7 +79,7 @@ public class Papeleria {
 	}
 	
 	public String toCsv() {
-		return this.nombre+","+this.marca+","+this.precio+","+this.existencia+","+this.categoria;
+		return this.id+","+this.nombre+","+this.marca+","+this.precio+","+this.existencia+","+this.categoria;
 	}
 
 }
