@@ -189,7 +189,7 @@ public class PapeleriaMain {
                     break;
                     
                 case 2:
-                	System.out.println("-----Agregar Nuevo Producto");
+                	System.out.println("-----Agregar Nuevo Producto-----");
                 	escribeVector(sc);
                 	ingresaToCSV();
                     break;
