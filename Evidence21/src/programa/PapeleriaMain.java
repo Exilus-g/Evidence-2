@@ -182,7 +182,7 @@ public class PapeleriaMain {
                 	System.out.println("Aquí muestra inventario por nombre");
                     break;
                 case 3:
-                	System.out.println("Aquí muestra inventario por categoria");
+                	System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opción inválida. Intente nuevamente.");
