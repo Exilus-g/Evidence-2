@@ -1,8 +1,6 @@
 package programa;
 
-import java.util.Scanner;
-import java.util.Vector;  
-import java.util.Collections;
+import java.util.*;
 import java.io.*;
 
 
@@ -36,6 +34,50 @@ public class PapeleriaMain {
 		}while(!nombre.equalsIgnoreCase("Fin"));
 		return;
 	}
+	
+	
+	public static void leeArchivo() {
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+	List<Papeleria> producto = new ArrayList<>();	
+
+        try {
+            archivo = new File("ruta_del_archivo");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+
+                String[] datos = linea.split(",");
+
+                if (datos.length == 5) {
+                    
+                	int id = Integer.parseInt(datos[0].trim());
+                    String nombre = datos[1].trim();
+                    String marca = datos[2].trim();
+                    String precio = datos[3].trim();
+                    int existencia = Integer.parseInt(datos[4].trim());
+                    String categoria = datos[5].trim();
+
+
+                    boolean tienePrecio = linea.contains("$");
+                        
+                    if (!tienePrecio) {
+                    		System.out.println("ERROR, datos incompletos");
+                        } else {
+                        	Papeleria pa = new Papeleria(nombre, marca, precio, existencia, categoria);
+                        	producto.add(pa);
+                        }
+                }
+            }
+        }
+    }
+	
+	
+	
+	
 	public static void escribeCsv() {
 		File f = new File("./resultado.csv");
 		try(FileWriter fw= new FileWriter(f);){
@@ -50,11 +92,15 @@ public class PapeleriaMain {
 		
 	}
 	
+	
+	
+	
+	
+	
 	public static int menu(Scanner sc) {
 		
 		System.out.println("=== Papelería ===");
         System.out.println("1. Mostrar inventario ordenado por categoria.");
-        System.out.println("1. Mostrar inventario ordenado por Nombre.");
         System.out.println("2. Agregar nuevo elemento.");
         System.out.println("3. Salir");
         System.out.print("Ingrese su opción: ");
