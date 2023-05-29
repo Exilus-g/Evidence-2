@@ -17,4 +17,5 @@ class OrdenarPorCategoria implements Comparator<Papeleria> {
     public int compare(Papeleria p1, Papeleria p2) {
         return p1.getCategoria().compareTo(p1.getCategoria());
     }
+    
 }
