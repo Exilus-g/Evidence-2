@@ -1,8 +1,6 @@
 package programa;
 
-import java.util.Scanner;
-import java.util.Vector;  
-import java.util.Collections;
+import java.util.*;
 import java.io.*;
 
 
@@ -38,6 +36,86 @@ public class PapeleriaMain {
 		}while(!nombre.equalsIgnoreCase("Fin"));
 		return;
 	}
+	
+	
+	public static void leeArchivo() {
+		char op;
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+        List<Papeleria> producto = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            archivo = new File("ruta_del_archivo");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+
+                String[] datos = linea.split(",");
+
+                if (datos.length == 5) {
+                    
+                	int id = Integer.parseInt(datos[0].trim());
+                    String nombre = datos[1].trim();
+                    String marca = datos[2].trim();
+                    String precio = datos[3].trim();
+                    int existencia = Integer.parseInt(datos[4].trim());
+                    String categoria = datos[5].trim();
+
+
+                    boolean tienePrecio = linea.contains("$");
+                        
+                    if (!tienePrecio) {
+                    		System.out.println("El producto con id " + id + "no tiene precio.");
+                        } else {
+                        	Papeleria pa = new Papeleria(nombre, marca, precio, existencia, categoria);
+                        	producto.add(pa);
+                        }
+                }
+            }
+        } catch (ArrayIndexOutOfBoundsException excArreglo) {
+            System.out.println("Se excedió el índice del arreglo.");
+            System.exit(0);
+        } catch (IOException e) {
+            System.out.println(e.getMessage() + " en el directorio.");
+            System.out.println("No se encontró el archivo, .");
+            System.out.println("Si la ruta es correcta, ¿desea crear un archivo nuevo?: (y/n)");
+            op = sc.nextLine().charAt(0);
+            do {
+            	switch (Character.toLowerCase(op)) {
+                	case 'y':
+	                    System.out.println("Se ha creado un nuevo CSV...");
+	                    escribeCsv();
+	                    break;
+	                case 'n':
+	                    System.out.println("Revise la ruta del archivo o cree uno nuevo antes de volver a ejecutar este programa.");
+	                    break;
+	                default:
+	                    System.out.println("Opción inválida. Intente nuevamente.");
+	                    break;
+	            }
+            } while (Character.toLowerCase(op) != 'n');
+	            
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fr != null) {
+                    fr.close();
+                }
+            } catch (IOException e2) {
+                e2.printStackTrace();
+            }
+        }
+    }
+	
+	
+	
+	
 	public static void escribeCsv() {
 		File f = new File("./resultado.csv");
 		try(FileWriter fw= new FileWriter(f);){
@@ -59,6 +137,11 @@ public class PapeleriaMain {
     }
 		
 	
+	
+	
+	
+	
+	
 	public static int menu(Scanner sc) {
 		
 		System.out.println("=== Papelería ===");
@@ -66,6 +149,7 @@ public class PapeleriaMain {
         System.out.println("2. Mostrar inventario ordenado por Nombre.");
         System.out.println("3. Agregar nuevo elemento al Csv Existente.");
         System.out.println("4. Salir");
+
         System.out.print("Ingrese su opción: ");
         int opcion=sc.nextInt();
         return opcion;
