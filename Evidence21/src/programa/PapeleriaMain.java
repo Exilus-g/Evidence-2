@@ -114,6 +114,7 @@ public class PapeleriaMain {
                 e2.printStackTrace();
             }
         }
+       sc.close();
     }
 	
 	

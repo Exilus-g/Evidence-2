@@ -46,9 +46,9 @@ public class Papeleria {
 	public String getCategoria() {
 		return categoria;
 	}
-
 	/**
 	 * Set methods for assigning values to attributes
+	 * @param id
 	 * @param nombre
 	 * @param marca
 	 * @param precio
