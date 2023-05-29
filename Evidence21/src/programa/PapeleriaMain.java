@@ -5,7 +5,7 @@ import java.io.*;
 
 
 public class PapeleriaMain {
-	public static Vector<Papeleria>producto= new Vector<>();
+	public static Vector<Papeleria> producto= new Vector<>();
 	
 	public static void escribeVector(Scanner sc){
 		producto.clear();
@@ -59,7 +59,7 @@ public class PapeleriaMain {
 
                 String[] datos = linea.split(",");
 
-                if (datos.length == 5) {
+                if (datos.length == 6) {
                     
                 	int id = Integer.parseInt(datos[0].trim());
                     String nombre = datos[1].trim();
@@ -79,6 +79,7 @@ public class PapeleriaMain {
                         }
                 }
             }
+            guardarCsv(producto, archivo.getAbsolutePath());
         } catch (ArrayIndexOutOfBoundsException excArreglo) {
             System.out.println("Se excedió el índice del arreglo.");
             System.exit(0);
@@ -114,6 +115,8 @@ public class PapeleriaMain {
                 e2.printStackTrace();
             }
         }
+        
+        sc.close();
     }
 	
 	
@@ -141,8 +144,21 @@ public class PapeleriaMain {
     }
 	
 	
-	public static void guardarCsv() {
-		
+	public static void guardarCsv(List<Papeleria> producto, String rutaArchivo) {
+	    try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo))) {
+	        for (Papeleria papeleria : producto) {
+	            String linea = papeleria.getIdi() + "," +
+	                           papeleria.getNombre() + "," +
+	                           papeleria.getMarca() + "," +
+	                           papeleria.getPrecio() + "," +
+	                           papeleria.getExistencia() + "," +
+	                           papeleria.getCategoria();
+	            bw.write(linea);
+	            bw.newLine();
+	        }
+	    } catch (IOException e) {
+	        System.out.println("Error al guardar el archivo CSV: " + e.getMessage());
+	    }
 	}
 	
 	public static int menu(Scanner sc) {
@@ -156,6 +172,73 @@ public class PapeleriaMain {
         return opcion;
 	}
 	
+	
+	public static int submenu(Scanner sc) {
+		
+		System.out.println("=== Papelería ===");
+        System.out.println("1. Ordenamiento por nombre.");
+        System.out.println("2. Ordenamiento por precio.");
+        System.out.println("3. Ordenamiento por categoría.");
+        System.out.println("4. Salir");
+        System.out.print("Ingrese su opción: ");
+        int opcion=sc.nextInt();
+        return opcion;
+	}
+	
+	public static void OrdenarPorCategoria(){
+        if (producto.size() > 0)
+          {  
+            System.out.println();
+            System.out.println("Inventario ordenado por categoría: ");
+
+            Collections.sort(producto, new x());
+            int j;
+
+            for (int i=0; i<producto.size(); i++)
+               {
+                 j=i+1;
+                 System.out.println(producto.elementAt(i).getIdi() + ": " + producto.elementAt(i).getCategoria() + ", "+ producto.elementAt(i).getNombre() + ", "+ producto.elementAt(i).getMarca() + ", " + producto.elementAt(i).getPrecio() + ", " + producto.elementAt(i).getExistencia());
+               } 
+         }      
+    }
+	
+	
+	public static void OrdenarPorNombre(){
+        if (producto.size() > 0)
+          {  
+            System.out.println();
+            System.out.println("Inventario ordenado por nombre: ");
+
+            Collections.sort(producto, new x());
+            int j;
+
+            for (int i=0; i<producto.size(); i++)
+               {
+                 j=i+1;
+                 System.out.println(producto.elementAt(i).getIdi() + ": " + producto.elementAt(i).getNombre() + ", "+ producto.elementAt(i).getMarca() + ", " + producto.elementAt(i).getPrecio() + ", " + producto.elementAt(i).getExistencia() + producto.elementAt(i).getCategoria());
+               } 
+         }      
+    }
+	
+	
+	public static void OrdenarPorPrecio(){
+        if (producto.size() > 0)
+          {  
+            System.out.println();
+            System.out.println("Inventario ordenado por precio: ");
+
+            Collections.sort(producto, new x());
+            int j;
+
+            for (int i=0; i<producto.size(); i++)
+               {
+                 j=i+1;
+                 System.out.println(producto.elementAt(i).getIdi() + ": " + producto.elementAt(i).getPrecio() + ", " + producto.elementAt(i).getNombre() + ", "+ producto.elementAt(i).getMarca() + ", " + producto.elementAt(i).getExistencia() + producto.elementAt(i).getCategoria());
+               } 
+         }      
+    }
+	
+
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		
@@ -166,16 +249,16 @@ public class PapeleriaMain {
             switch (opcion) {
                 case 1:
                 	do {
-                    	opcion=menu(sc);
+                    	opcion=submenu(sc);
                         switch (opcion) {
                             case 1:
-                            	System.out.println("Inventario ordenado por nombre.");
+                            	OrdenarPorNombre();
                                 break;
                             case 2:
-                            	System.out.println("Inventario ordenado por precio.");
+                            	OrdenarPorPrecio();
                                 break;
                             case 3:
-                            	System.out.println("Inventario ordenado por categoría.");
+                            	OrdenarPorCategoria();
                                 break;
                             case 4:
                             	System.out.println("Saliendo...");
