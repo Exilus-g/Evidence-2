@@ -16,6 +16,6 @@ class OrdenarPorNombre implements Comparator<Papeleria> {
      *         zero if they are equal, or a positive integer if p1's name is lexicographically greater than p2's name
      */
     public int compare(Papeleria p1, Papeleria p2) {
-        return p1.getNombre().compareTo(p1.getNombre());
+        return p1.getNombre().compareTo(p2.getNombre());
     }
 }

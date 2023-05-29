@@ -8,7 +8,7 @@ public class PapeleriaMain {
 	public static Vector<Papeleria> producto= new Vector<>();
 	
 	public static void escribeVector(Scanner sc){
-		producto.clear();
+		
 		sc.nextLine();
 		String nombre;
 		String marca;
@@ -39,14 +39,106 @@ public class PapeleriaMain {
 		}while(!nombre.equalsIgnoreCase("Fin"));
 		return;
 	}
+	public static void leeArchivo()
+    {
+		producto.clear();
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
+ 
+        try // bloque try. Las instrucciones que serviran para algo.
+        {
+            archivo = new File("./resultado.csv");
+            fr = new FileReader (archivo);
+            br = new BufferedReader(fr);
+
+            // Lectura del archivo
+            System.out.println("Contenido del archivo resultado.csv");
+            String linea;
+            int i=1;
+
+            while((linea=br.readLine())!=null)
+              {
+                 if (i==1)
+                   {
+                     System.out.println("Los metadatos son: ");
+                     System.out.println(">> " + linea); 
+                     i++;  
+                   }
+                 else 
+                   {
+                    if (linea.length()!=0) 
+                      {  
+                        System.out.println(linea);
+                        i++;
+
+                        // Divide un renglon del archivo CSV buscando las comas
+
+                        String[] datosEst = linea.split(",");
+                          
+                        String id=datosEst[0];
+                        String nombre=datosEst[1];
+                        String marca=datosEst[2];
+                        String precio=datosEst[3];
+						String existencia=datosEst[4]; 
+                        String categoria=datosEst[5];
+                        
+
+                      
+                        boolean tieneCorreo = linea.contains("@");
+                        
+                        if (tieneCorreo==false)
+                           System.out.println("ERROR, datos incompletos");
+                        else    
+                          {
+                            Papeleria p = new Papeleria(Integer.parseInt(id),nombre,marca,precio,Integer.parseInt(existencia),categoria);
+                            producto.add(p);
+                          } 
+                      } //if
+                } //else
+             }//while   
+        }
+        catch (ArrayIndexOutOfBoundsException excArreglo )
+        {
+          System.out.println("Se excedio el indice del arreglo. ");
+          System.exit(0);
+        }
+        catch (FileNotFoundException fileNotFound)
+        {
+         System.out.println(fileNotFound.getMessage() + " en el directorio.");
+         System.out.println("Revise la ruta del archivo antes de volver a ejecutar este programa.");
+         System.out.println(" G R A C I A S. ");
+         System.exit(0);  
+        }
+
+        // Bloque catch. Contiene las instruciones para manejar las excepciones
+        catch (Exception e)  // El catch atrapa una excepcion en el objeto e
+        {
+           e.printStackTrace();  
+        }
+       
+        finally
+         {
+           try 
+           {
+              if(null!= fr) 
+              {
+                 fr.close();
+              }
+           }
+           catch (Exception e2) 
+           {
+              e2.printStackTrace();
+           }
+        }
+    }
 	
-	
-	public static void leeArchivo() {
+	/*public static void leeArchivo() {
 		char op;
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
-        List<Papeleria> producto = new ArrayList<>();
+        
         Scanner sc = new Scanner(System.in);
 
         try {
@@ -79,7 +171,7 @@ public class PapeleriaMain {
                         }
                 }
             }
-            guardarCsv(producto, archivo.getAbsolutePath());
+            //guardarCsv(producto, archivo.getAbsolutePath());
         } catch (ArrayIndexOutOfBoundsException excArreglo) {
             System.out.println("Se excedió el índice del arreglo.");
             System.exit(0);
@@ -91,8 +183,8 @@ public class PapeleriaMain {
             do {
             	switch (Character.toLowerCase(op)) {
                 	case 'y':
-	                    System.out.println("Se ha creado un nuevo CSV...");
 	                    escribeCsv();
+	                    System.out.println("Se ha creado un nuevo CSV...");
 	                    break;
 	                case 'n':
 	                    System.out.println("Revise la ruta del archivo o cree uno nuevo antes de volver a ejecutar este programa.");
@@ -116,10 +208,7 @@ public class PapeleriaMain {
             }
         }
        sc.close(); 
-
-    }
-	
-	
+    }*/
 	
 	
 	public static void escribeCsv() {
@@ -132,6 +221,8 @@ public class PapeleriaMain {
 			System.out.println("Ha ocurrido un error");
 		}
 	}
+	
+	
 	public static void ingresaToCSV() {
 		try (FileWriter fw = new FileWriter("./resultado.csv", true)) {
             for (Papeleria papeleria : producto) {
@@ -219,6 +310,17 @@ public class PapeleriaMain {
                } 
          }      
     }
+	/*public static void impN() {
+		Collections.sort(producto, Comparator.comparing(Papeleria::getNombre));
+		 String newCsvFilePath = "./resultado_ordenado.csv";
+	        try (FileWriter fw = new FileWriter(newCsvFilePath)) {
+	            for (Papeleria papeleria : producto) {
+	                fw.write(papeleria.toCsv() + "\n");
+	            }
+	        } catch (IOException e) {
+	            System.out.println("Ha ocurrido un error al escribir en el archivo CSV ordenado");
+	        }      
+	}*/
 	
 	
 	public static void ImpPorPrecio(){
@@ -241,16 +343,16 @@ public class PapeleriaMain {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		
+		leeArchivo();
 		int opcion;
-		
+		int op2;
         do {
         	opcion=menu(sc);
             switch (opcion) {
                 case 1:
                 	do {
-                    	opcion=submenu(sc);
-                        switch (opcion) {
+                    	op2=submenu(sc);
+                        switch (op2) {
                             case 1:
                             	ImpPorNombre();
                                 break;
@@ -267,11 +369,12 @@ public class PapeleriaMain {
                                 System.out.println("Opción inválida. Intente nuevamente.");
                                 break;
                         }
-                    } while (opcion != 4);
+                    } while (op2 != 4);
                     break;
                     
                 case 2:
                 	System.out.println("-----Agregar Nuevo Producto-----");
+                	producto.clear();
                 	escribeVector(sc);
                 	ingresaToCSV();
                     break;
