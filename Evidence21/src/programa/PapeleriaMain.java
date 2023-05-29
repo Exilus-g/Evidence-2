@@ -385,6 +385,7 @@ public class PapeleriaMain {
                     System.out.println("Opción inválida. Intente nuevamente.");
                     break;
             }
+            
         } while (opcion != 3);
         sc.close();
 	}
