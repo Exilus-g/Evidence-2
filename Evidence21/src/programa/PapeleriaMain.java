@@ -156,10 +156,28 @@ public class PapeleriaMain {
         	opcion=menu(sc);
             switch (opcion) {
                 case 1:
-                	System.out.println("-----Crear un Nuevo Csv-----");
-                	escribeVector(sc);
-            		escribeCsv();
+                	do {
+                    	opcion=menu(sc);
+                        switch (opcion) {
+                            case 1:
+                            	System.out.println("Inventario ordenado por nombre.");
+                                break;
+                            case 2:
+                            	System.out.println("Inventario ordenado por precio.");
+                                break;
+                            case 3:
+                            	System.out.println("Inventario ordenado por categoría.");
+                                break;
+                            case 4:
+                            	System.out.println("Saliendo...");
+                                break;
+                            default:
+                                System.out.println("Opción inválida. Intente nuevamente.");
+                                break;
+                        }
+                    } while (opcion != 4);
                     break;
+                    
                 case 2:
                 	System.out.println("Aquí muestra inventario por nombre");
                     break;
