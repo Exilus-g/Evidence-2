@@ -1,6 +1,9 @@
 package programa;
 
 import java.util.*;
+
+import universidades.Universidad;
+
 import java.io.*;
 
 
@@ -74,26 +77,19 @@ public class PapeleriaMain {
 
                         // Divide un renglon del archivo CSV buscando las comas
 
-                        String[] datosEst = linea.split(",");
+                        String[] partes = linea.split(",");
+                        if (partes.length == 5) {
+                        	 String id=partes[0];
+                             String nombre=partes[1];
+                             String marca=partes[2];
+                             String precio=partes[3];
+     						 String existencia=partes[4]; 
+                             String categoria=partes[5];
+                            
+                             Papeleria p = new Papeleria(Integer.parseInt(id),nombre,marca,precio,Integer.parseInt(existencia),categoria);
+                             producto.add(p);
+                        }
                           
-                        String id=datosEst[0];
-                        String nombre=datosEst[1];
-                        String marca=datosEst[2];
-                        String precio=datosEst[3];
-						String existencia=datosEst[4]; 
-                        String categoria=datosEst[5];
-                        
-
-                      
-                        boolean tieneCorreo = linea.contains("@");
-                        
-                        if (tieneCorreo==false)
-                           System.out.println("ERROR, datos incompletos");
-                        else    
-                          {
-                            Papeleria p = new Papeleria(Integer.parseInt(id),nombre,marca,precio,Integer.parseInt(existencia),categoria);
-                            producto.add(p);
-                          } 
                       } //if
                 } //else
              }//while   

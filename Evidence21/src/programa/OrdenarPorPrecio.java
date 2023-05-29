@@ -16,6 +16,6 @@ class OrdenarPorPrecio implements Comparator<Papeleria> {
      *         zero if they are equal, or a positive integer if p1's price is greater than p2's price
      */
     public int compare(Papeleria p1, Papeleria p2) {
-        return p1.getPrecio().compareTo(p1.getPrecio());
+        return p1.getPrecio().compareTo(p2.getPrecio());
     }
 }

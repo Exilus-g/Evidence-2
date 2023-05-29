@@ -15,7 +15,7 @@ class OrdenarPorCategoria implements Comparator<Papeleria> {
      * @return a negative integer if p1's category is less than p2's category, zero if they are equal, or a positive integer if p1's category is greater than p2's category
      */
     public int compare(Papeleria p1, Papeleria p2) {
-        return p1.getCategoria().compareTo(p1.getCategoria());
+        return p1.getCategoria().compareTo(p2.getCategoria());
     }
     
 }
