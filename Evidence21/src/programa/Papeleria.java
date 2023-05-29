@@ -24,7 +24,7 @@ public class Papeleria {
 	/**
      *  Get methods to obtain attribute values
      * */
-	public int getIdi() {
+	public int getId() {
 		return id;
 	}
 	public String getNombre() {

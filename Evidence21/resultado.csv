@@ -1,35 +1,34 @@
-idProd,nombre,marca,precio,existencia,categoría
-1,Lápiz carpintero 1536,Koh I Noor,$9.50 MXN,175,Escritura
-2,Bolígrafo Bic Cristal Azul,Bic,$5.00 MXN,145,Escritura
-3,Cuaderno Norma Profesional Rayado,Norma,$29.00 MXN,157,Papel
-4,Carpeta Tamaño Carta Azul,Office Depot,$15.00 MXN,112,Organización
-5,Borrador Pelikan Blanco,Pelikan,$7.00 MXN,93,Escritura
-6,Sacapuntas Maped Croc Croc Bunny Rosa,Maped,$39.00 MXN,117,Escritura
-7,Regla Flexible Maped Twist N Flex 30 cm Verde,Maped,$25.00 MXN,112,Dibujo
-8,Tijeras Punta Redonda 13 cm Azul,Office Depot,$19.00 MXN,160,Corte
-9,Pegamento Elmer’s Escolar Blanco 118 ml,Elmer’s,$25.00 MXN,133,Adhesivos
-10,Cinta Adhesiva Scotch Transparente 12 mm x 33 m,Scotch,$15.00 MXN,122,Adhesivos
-11,Clips Niquelados N°1 Caja con 100 Piezas,Baco,$10.00 MXN,98,Organización
-12,Engrapadora Negra con Grapas y Quitagrapas Incluidos,Offimax,$69.00 MXN,138,Organización
-13,Perforadora Negra de 1 Orificio Capacidad de 8 Hojas,Milimétrica,$19.00 MXN,118,Organización
-14,Papel Bond Tamaño Carta Blanco Paquete con 500 Hojas,Copamex,$99.00 MXN,133,Papel
-15,Papel Fotográfico PB072 Mate Tamaño Carta Paquete con 20 Hojas,Kronaline,$99.00 MXN,154,Papel
-16,Cartulina Texturizada Criptonita Verde Limón Tamaño Doble Carta Paquete con 10 Hojas,Criptonita,$49.00 MXN,125,Papel
-17,Marcador Permanente Negro Punta Fina Blister con 2 Piezas,Sharpie,$29.00 MXN,119,Escritura
-18,Pluma Fuente Parker IM Premium Negra con Plumilla de Acero Inoxidable y Detalles Cromados,Parker,"$1,199.00 MXN",172,Escritura
-19,Calculadora Casio FX-82MS Científica con 240 Funciones Integradas,Casio,$149.00 MXN,87,Electrónica
-20,Escritorio Esquinero Corner / Café con blanco / MDF,MueblesMex,"$2,029.30 MXN",171,Muebles
-21,Silla Ejecutiva Caine / Polipiel / Negro,ErgoChair,"$3,499.00 MXN",131,Muebles
-22,Librero Skanor 2812 Chocolate con 5 Repisas,Skanor,"$2,999.00 MXN",140,Muebles
-23,Pizarrón Multiusos Alfra 4452 Cristal Pintaglass Blanco con Marco de Aluminio y Accesorios Incluidos,Alfra,"$1,699.00 MXN",166,Muebles
-24,"Arte por Números Educar Caballete de Mesa 40 x 40 cm con Lienzo Pre-Dibujado, Pinturas Acrílicas y Pinceles Incluidos Modelo Elefante Africano",Educar,$250.00 MXN,167,Arte
-25,Etiquetas Blancas Tamaño Carta Paquete con 100 Hojas,Avery,$299.00 MXN,105,Papel
-26,Folder Manila Tamaño Oficio Color Amarillo Paquete con 100 Piezas,ManilasMex,$99.00 MXN,89,Organización
-27,Separadores de Plástico con Índice Alfabético de A a Z Color Multicolor,DiviTabs,$39.00 MXN,145,Organización
-28,Libreta Profesional Scribe Raya Tamaño Ejecutivo Color Negro Pasta Dura con 200 Hojas,Scribe,$69.00 MXN,97,Papel
-29,Lámpara de Escritorio LED con Puerto USB Color Negro,LiteTech,$399.00 MXN,99,Iluminación
-30,Mouse Inalámbrico Logitech M185 Gris con Receptor Nano USB,Logitech,$249.00 MXN,108,Electrónica
-31,Memoria USB DataTraveler SE9 de 16 GB Color Plata,Kingston,$99.00 MXN,89,Electrónica
-32,Compás Maped Stop System con Adaptador Universal y Minas de Repuesto Blister con 1 Pieza Color Azul,Maped,$49.00 MXN,172,Dibujo
-33,Goma de Borrar para Tinta y Lápiz Blister con 2 Piezas Color Azul y Rojo,Pelikan,$15.00 MXN,132,Escritura
-34,Corrector Líquido Wite Out Shake N Squeeze Blister con 1 Pieza Color Blanco,Bic,$25.00 MXN,131,Escritura
+Id,Nombre,Marca,Precio,Existencia,Categoria
+2,Boligrafo Bic Cristal Azul,Bic,5.00 MXN,145,Escritura
+5,Borrador Pelikan Blanco,Pelikan,7.00 MXN,93,Escritura
+19,Calculadora Casio FX-82MS Cientifica con 240 Funciones Integradas,Casio,149.00 MXN,87,Electronica
+4,Carpeta Tamano Carta Azul,Office Depot,15.00 MXN,112,Organizacion
+16,Cartulina Texturizada Criptonita Verde Limon Tamano Doble Carta Paquete con 10 Hojas,Criptonita,49.00 MXN,125,Papel
+10,Cinta Adhesiva Scotch Transparente 12 mm x 33 m,Scotch,15.00 MXN,122,Adhesivos
+11,Clips Niquelados N1 Caja con 100 Piezas,Baco,10.00 MXN,98,Organizacion
+32,Compas Maped Stop System con Adaptador Universal y Minas de Repuesto Blister con 1 Pieza Color Azul,Maped,49.00 MXN,172,Dibujo
+34,Corrector Liquido Wite Out Shake N Squeeze Blister con 1 Pieza Color Blanco,Bic,25.00 MXN,131,Escritura
+3,Cuaderno Norma Profesional Rayado,Norma,29.00 MXN,157,Papel
+12,Engrapadora Negra con Grapas y Quitagrapas Incluidos,Offimax,69.00 MXN,138,Organizacion
+20,Escritorio Esquinero Corner / Cafe con blanco / MDF,MueblesMex,2029.30 MXN,171,Muebles
+25,Etiquetas Blancas Tamano Carta Paquete con 100 Hojas,Avery,299.00 MXN,105,Papel
+26,Folder Manila Tamano Oficio Color Amarillo Paquete con 100 Piezas,ManilasMex,99.00 MXN,89,Organizacion
+33,Goma de Borrar para Tinta y Lapiz Blister con 2 Piezas Color Azul y Rojo,Pelikan,15.00 MXN,132,Escritura
+29,Lampara de Escritorio LED con Puerto USB Color Negro,LiteTech,399.00 MXN,99,Iluminacion
+1,Lapiz carpintero 1536,Koh I Noor,9.50 MXN,175,Escritura
+22,Librero Skanor 2812 Chocolate con 5 Repisas,Skanor,2999.00 MXN,140,Muebles
+28,Libreta Profesional Scribe Raya Tamano Ejecutivo Color Negro Pasta Dura con 200 Hojas,Scribe,69.00 MXN,97,Papel
+17,Marcador Permanente Negro Punta Fina Blister con 2 Piezas,Sharpie,29.00 MXN,119,Escritura
+31,Memoria USB DataTraveler SE9 de 16 GB Color Plata,Kingston,99.00 MXN,89,Electronica
+30,Mouse Inalambrico Logitech M185 Gris con Receptor Nano USB,Logitech,249.00 MXN,108,Electronica
+14,Papel Bond Tamano Carta Blanco Paquete con 500 Hojas,Copamex,99.00 MXN,133,Papel
+15,Papel Fotografico PB072 Mate Tamano Carta Paquete con 20 Hojas,Kronaline,99.00 MXN,154,Papel
+9,Pegamento Elmers Escolar Blanco 118 ml,Elmers,25.00 MXN,133,Adhesivos
+13,Perforadora Negra de 1 Orificio Capacidad de 8 Hojas,Milimetrica,19.00 MXN,118,Organizacion
+23,Pizarron Multiusos Alfra 4452 Cristal Pintaglass Blanco con Marco de Aluminio y Accesorios Incluidos,Alfra,1699.00 MXN,166,Muebles
+18,Pluma Fuente Parker IM Premium Negra con Plumilla de Acero Inoxidable y Detalles Cromados,Parker,1199.00 MXN,172,Escritura
+7,Regla Flexible Maped Twist N Flex 30 cm Verde,Maped,25.00 MXN,112,Dibujo
+6,Sacapuntas Maped Croc Croc Bunny Rosa,Maped,39.00 MXN,117,Escritura
+27,Separadores de Plastico con Indice Alfabetico de A a Z Color Multicolor,DiviTabs,39.00 MXN,145,Organizacion
+21,Silla Ejecutiva Caine / Polipiel / Negro,ErgoChair,3499.00 MXN,131,Muebles
+8,Tijeras Punta Redonda 13 cm Azul,Office Depot,19.00 MXN,160,Corte
