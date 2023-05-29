@@ -185,13 +185,13 @@ public class PapeleriaMain {
         return opcion;
 	}
 	
-	public static void OrdenarPorCategoria(){
+	public static void ImpPorCategoria(){
         if (producto.size() > 0)
           {  
             System.out.println();
             System.out.println("Inventario ordenado por categoría: ");
 
-            Collections.sort(producto, new x());
+            Collections.sort(producto, new OrdenarPorCategoria());
             int j;
 
             for (int i=0; i<producto.size(); i++)
@@ -203,13 +203,13 @@ public class PapeleriaMain {
     }
 	
 	
-	public static void OrdenarPorNombre(){
+	public static void ImpPorNombre(){
         if (producto.size() > 0)
           {  
             System.out.println();
             System.out.println("Inventario ordenado por nombre: ");
 
-            Collections.sort(producto, new x());
+            Collections.sort(producto, new OrdenarPorNombre());
             int j;
 
             for (int i=0; i<producto.size(); i++)
@@ -221,13 +221,13 @@ public class PapeleriaMain {
     }
 	
 	
-	public static void OrdenarPorPrecio(){
+	public static void ImpPorPrecio(){
         if (producto.size() > 0)
           {  
             System.out.println();
             System.out.println("Inventario ordenado por precio: ");
 
-            Collections.sort(producto, new x());
+            Collections.sort(producto, new OrdenarPorPrecio());
             int j;
 
             for (int i=0; i<producto.size(); i++)
@@ -252,13 +252,13 @@ public class PapeleriaMain {
                     	opcion=submenu(sc);
                         switch (opcion) {
                             case 1:
-                            	OrdenarPorNombre();
+                            	ImpPorNombre();
                                 break;
                             case 2:
-                            	OrdenarPorPrecio();
+                            	ImpPorPrecio();
                                 break;
                             case 3:
-                            	OrdenarPorCategoria();
+                            	ImpPorCategoria();
                                 break;
                             case 4:
                             	System.out.println("Saliendo...");
